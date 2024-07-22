@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: actions-docker-aks
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: actions-docker-aks
+  template:
+    metadata:
+      labels:
+        app: actions-docker-aks
+    spec:
+      containers:
+        - name: actions-docker-aks
+          image: IMAGE_PLACEHOLDER
+          ports:
+            - containerPort: 8090
